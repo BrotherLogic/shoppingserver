@@ -1,5 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.brotherlogic.shopping</groupId>
   <artifactId>shoppingserver</artifactId>
@@ -13,12 +14,6 @@
   </prerequisites>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-      </resource>
-    </resources>
 
     <plugins>
       <plugin>
@@ -28,15 +23,6 @@
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>com.atlassian.maven.plugins</groupId>
-        <artifactId>maven-jgitflow-plugin</artifactId>
-        <version>1.0-alpha21.1</version>
-        <configuration>
-	  <pushReleases>true</pushReleases>
         </configuration>
       </plugin>
 
@@ -82,7 +68,7 @@
       </plugin>
     </plugins>
   </build>
-
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
