@@ -3,16 +3,16 @@
   <display-name>Shopping List Server</display-name>
 
   <listener>
-    <listener-class>com.brotherlogic.shopping.ContextListener</listener-class>
+    <listener-class>com.brotherlogic.shopping.web.ContextListener</listener-class>
   </listener>
 
   <!-- For the main page stuff -->
   <servlet>
-    <servlet-name>VersionServlet</servlet-name>
-    <servlet-class>com.brotherlogic.shopping.servlets.VersionServlet</servlet-class>
+    <servlet-name>MainServlet</servlet-name>
+    <servlet-class>com.brotherlogic.shopping.web.MainServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>VersionServlet</servlet-name>
-    <url-pattern>/version</url-pattern>
+    <servlet-name>MainServlet</servlet-name>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>

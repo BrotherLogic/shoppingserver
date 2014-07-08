@@ -5,16 +5,16 @@ import javax.servlet.ServletContextListener;
 
 /**
  * Hello world!
- * 
+ *
  */
 public class ContextListener implements ServletContextListener {
 
-	public void contextDestroyed(ServletContextEvent arg0) {
+    @Override
+    public void contextDestroyed(final ServletContextEvent arg0) {
+    }
 
-	}
-
-	public void contextInitialized(ServletContextEvent arg0) {
-		// Bring up the database
-	}
+    @Override
+    public void contextInitialized(final ServletContextEvent arg0) {
+    }
 
 }
