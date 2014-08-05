@@ -20,11 +20,19 @@ import com.mongodb.DBObject;
  *
  */
 @Path("list/{listid}")
-public class ShoppingList {
+public final class ShoppingList {
 
+    /**
+     * Gets the shopping lists for a particular user
+     *
+     * @param userID
+     *            the ID of the user to retrieve for
+     * @return A List of the ShoppingLists for this user
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public static List<ShoppingList> getLists(@PathParam("listid") long userID) {
+    public static List<ShoppingList> getLists(
+            @PathParam("listid") final long userID) {
 
         List<ShoppingList> lists = new LinkedList<ShoppingList>();
 
@@ -58,11 +66,14 @@ public class ShoppingList {
         return lists;
     }
 
-    public static void main(String[] args) {
-        ShoppingList.getLists(1234);
-    }
-
     private int id;
 
     private List<User> users;
+
+    /**
+     * Blocking Constructor
+     */
+    private ShoppingList() {
+
+    }
 }

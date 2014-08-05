@@ -4,9 +4,23 @@ import java.io.File;
 
 import org.apache.catalina.startup.Tomcat;
 
-public class Main {
+/**
+ * Main Heroku Runner
+ *
+ * @author simon
+ *
+ */
+public final class Main {
 
-    public static void main(String[] args) throws Exception {
+    /**
+     * Main method
+     *
+     * @param args
+     *            No command line arguments are used
+     * @throws Exception
+     *             If something goes wrong somewhere
+     */
+    public static void main(final String[] args) throws Exception {
 
         String webappDirLocation = "src/main/webapp/";
         Tomcat tomcat = new Tomcat();
@@ -26,5 +40,12 @@ public class Main {
 
         tomcat.start();
         tomcat.getServer().await();
+    }
+
+    /**
+     * Blocking constructor
+     */
+    private Main() {
+
     }
 }
