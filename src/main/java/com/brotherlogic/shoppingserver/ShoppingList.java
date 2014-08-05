@@ -9,6 +9,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.bson.types.ObjectId;
+
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
@@ -58,7 +60,7 @@ public final class ShoppingList {
             list1.add(new BasicDBList());
             obj.put("lists", list1);
             obj.put("userid", userID);
-            Database.getDatabase().store("List", obj);
+            list.id = Database.getDatabase().store("List", obj);
 
             lists.add(list);
         }
@@ -66,14 +68,28 @@ public final class ShoppingList {
         return lists;
     }
 
-    private int id;
+    private ObjectId id;
 
-    private List<User> users;
+    private List<User> users = new LinkedList<User>();
 
     /**
      * Blocking Constructor
      */
     private ShoppingList() {
 
+    }
+
+    /**
+     * @return The id of this list
+     */
+    public ObjectId getId() {
+        return id;
+    }
+
+    /**
+     * @return The Users for this list
+     */
+    public List<User> getUsers() {
+        return users;
     }
 }
