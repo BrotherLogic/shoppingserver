@@ -68,6 +68,8 @@ public final class ShoppingList {
         return lists;
     }
 
+    private List<Item> items;
+
     private ObjectId id;
 
     private List<User> users = new LinkedList<User>();
